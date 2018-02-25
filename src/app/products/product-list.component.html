@@ -6,8 +6,7 @@
     <div class='row'>
       <div class='col-mid-2'>Filter By:</div>
       <div class='col-md-4'>
-        <input type='text'
-        [(ngModel)]='listFilter' />
+        <input type='text' [(ngModel)]='listFilter' />
       </div>
     </div>
     <div class='row'>
@@ -40,7 +39,7 @@
                    [style.width.px]='imageWidth'
                    [style.margin.px]='imageMargin'>
             </td>
-            <td>{{product.productName}}</td>
+            <td><a [routerLink]="['/products', product.productId]">{{product.productName}}</a></td>
             <td>{{product.productCode | lowercase | converToSpaces: '-'}}</td>
             <td>{{product.releaseDate}}</td>
             <td>{{ product.price | currency:'USD':true:'1.2-2' }}</td>
